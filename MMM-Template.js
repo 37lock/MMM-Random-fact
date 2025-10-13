@@ -1,4 +1,4 @@
-Module.register("MMM-Template", {
+Module.register("MMM-random-fact", {
 
   defaults: {
     exampleContent: ""
@@ -21,7 +21,7 @@ async function randomFact() {
     const fact = data.text;
     
 }
-randomFact();
+
   start() {
     this.templateContent = this.config.exampleContent
 
@@ -48,13 +48,13 @@ randomFact();
    */
   getDom() {
     const wrapper = document.createElement("div")
-    wrapper.innerHTML = `<b>Title</b><br />${this.templateContent}`
+    wrapper.innerHTML = `<b>Random Fact</b><br />${this.templateContent}`
 
     return wrapper
   },
 
   addRandomText() {
-    this.sendSocketNotification("GET_RANDOM_TEXT", { amountCharacters: 15 })
+    this.sendSocketNotification("GET_RANDOM_TEXT")
   },
 
   /**
