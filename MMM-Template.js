@@ -11,9 +11,17 @@ Module.register("MMM-Template", {
     return ["template.css"]
   },
 
-  /**
-   * Pseudo-constructor for our module. Initialize stuff here.
-   */
+var url = "https://uselessfacts.jsph.pl/api/v2/facts/random";
+async function randomFact() {
+ const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+    const data = await response.json()
+    const text = data.text;
+    
+}
+randomFact();
   start() {
     this.templateContent = this.config.exampleContent
 
