@@ -18,7 +18,7 @@ async function randomFact() {
       throw new Error(`Response status: ${response.status}`);
     }
     const data = await response.json()
-    const text = data.text;
+    const fact = data.text;
     
 }
 randomFact();
