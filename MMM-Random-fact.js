@@ -1,4 +1,4 @@
-Module.register("MMM-random-fact", {
+Module.register("MMM-Random-fact", {
 
   defaults: {
     exampleContent: randomFact.fact,
@@ -8,7 +8,7 @@ Module.register("MMM-random-fact", {
    * Apply the default styles.
    */
   getStyles() {
-    return ["template.css"]
+    return ["random-fact.css"]
   },
 
 var url = "https://uselessfacts.jsph.pl/api/v2/facts/random";
