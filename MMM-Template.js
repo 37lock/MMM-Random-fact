@@ -48,7 +48,7 @@ async function randomFact() {
    */
   getDom() {
     const wrapper = document.createElement("div")
-    wrapper.innerHTML = `<b>Random Fact</b><br />${this.templateContent}`
+    wrapper.innerHTML = `<b>Random Fact</b><br/>${this.templateContent}`
 
     return wrapper
   },
@@ -62,11 +62,12 @@ async function randomFact() {
    *
    * @param {string} notification The notification ID, it is preferred that it prefixes your module name
    * @param {number} payload the payload type.
-   */
+   *
   notificationReceived(notification, payload) {
     if (notification === "TEMPLATE_RANDOM_TEXT") {
       this.templateContent = `${this.config.exampleContent} ${payload}`
       this.updateDom()
     }
   }
+  */
 })
