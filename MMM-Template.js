@@ -1,7 +1,7 @@
 Module.register("MMM-random-fact", {
 
   defaults: {
-    exampleContent: ""
+    exampleContent: randomFact.fact,
   },
 
   /**
@@ -35,14 +35,14 @@ async function randomFact() {
    *
    * @param {string} notification - The notification identifier.
    * @param {any} payload - The payload data`returned by the node helper.
-   */
+   *
   socketNotificationReceived: function (notification, payload) {
     if (notification === "EXAMPLE_NOTIFICATION") {
       this.templateContent = `${this.config.exampleContent} ${payload.text}`
       this.updateDom()
     }
   },
-
+*/ 
   /**
    * Render the page we're on.
    */
