@@ -8,13 +8,15 @@ async function randomFact() {
     }
     const data = await response.json();
     const fact = data.text;
+    return fact
     
 }
 module.exports = NodeHelper.create({
 
   async socketNotificationReceived(notification, payload) {
     if (notification === "GET_RANDOM_FACT") {
-      this.sendSocketNotification("RETURN_RANDOM_FACT", { text: randomFact().fact })
+      const result = await randomFact();
+      this.sendSocketNotification("RETURN_RANDOM_FACT", { text: result })
     }
   },
 })

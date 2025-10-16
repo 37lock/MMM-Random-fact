@@ -29,7 +29,7 @@ Module.register("MMM-Random-fact", {
    */
   socketNotificationReceived: function (notification, payload) {
     if (notification === "RETURN_RANDOM_FACT") {
-      this.templateContent = `${this.config.exampleContent} ${payload.text}`
+      this.templateContent = `${this.config.exampleContent} ${payload.text}`;
       this.updateDom()
     }
   },
