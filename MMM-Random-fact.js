@@ -47,7 +47,7 @@ Module.register("MMM-Random-fact", {
   addRandomFact() {
     this.sendSocketNotification("GET_RANDOM_FACT")
   },
-  addRandomFact();
+  addRandomFact(),
   /**
    * This is the place to receive notifications from other modules or the system.
    *
