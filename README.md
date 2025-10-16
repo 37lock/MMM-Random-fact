@@ -1,11 +1,5 @@
-# MMM-Template
-Use this template for creating new MagicMirror² modules.
-
-See the [wiki page](https://github.com/Dennis-Rosenbaum/MMM-Template/wiki) for an in depth overview of how to get started.
-
-# MMM-Template
-
-*MMM-Template* is a module for [MagicMirror²](https://github.com/MagicMirrorOrg/MagicMirror) that displays ... [Module description]
+# MMM-Random-fact
+Displays a random fact
 
 ## Screenshot
 
@@ -19,7 +13,7 @@ In your terminal, go to the modules directory and clone the repository:
 
 ```bash
 cd ~/MagicMirror/modules
-git clone [GitHub url]
+git clone [https://github.com/37lock/random-fact.git]
 ```
 
 ### Update
@@ -41,7 +35,7 @@ Minimal configuration to use the module:
 
 ```js
     {
-        module: 'MMM-Template',
+        module: 'MMM-Random-fact',
         position: 'lower_third'
     },
 ```
@@ -50,7 +44,7 @@ Configuration with all options:
 
 ```js
     {
-        module: 'MMM-Template',
+        module: 'MMM-Random-fact',
         position: 'lower_third',
         config: {
             exampleContent: 'Welcome world'
