@@ -16,9 +16,10 @@ Module.register("MMM-Random-fact", {
 
   start() {
     this.templateContent = this.config.exampleContent;
-
+    this.addRandomFact(),
     // set timeout for next random text
     setInterval(() => this.addRandomFact(), 900000)
+    
   },
 
   /**
@@ -47,7 +48,7 @@ Module.register("MMM-Random-fact", {
   addRandomFact() {
     this.sendSocketNotification("GET_RANDOM_FACT")
   },
-  addRandomFact(),
+
   /**
    * This is the place to receive notifications from other modules or the system.
    *
