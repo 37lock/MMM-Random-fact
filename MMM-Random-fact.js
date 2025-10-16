@@ -1,7 +1,7 @@
 Module.register("MMM-Random-fact", {
 
   defaults: {
-    exampleContent: randomFact.fact,
+    exampleContent: "",
   },
 
   /**
@@ -11,22 +11,13 @@ Module.register("MMM-Random-fact", {
     return ["random-fact.css"]
   },
 
-var url = "https://uselessfacts.jsph.pl/api/v2/facts/random";
-async function randomFact() {
- const response = await fetch(url);
-    if (!response.ok) {
-      throw new Error(`Response status: ${response.status}`);
-    }
-    const data = await response.json()
-    const fact = data.text;
-    
-}
+
 
   start() {
-    this.templateContent = this.config.exampleContent
+    this.templateContent = this.config.exampleContent;
 
     // set timeout for next random text
-    setInterval(() => this.addRandomText(), 3000)
+    setInterval(() => this.addRandomFact(), 3000)
   },
 
   /**
@@ -35,26 +26,25 @@ async function randomFact() {
    *
    * @param {string} notification - The notification identifier.
    * @param {any} payload - The payload data`returned by the node helper.
-   *
+   */
   socketNotificationReceived: function (notification, payload) {
-    if (notification === "EXAMPLE_NOTIFICATION") {
+    if (notification === "RETURN_RANDOM_FACT") {
       this.templateContent = `${this.config.exampleContent} ${payload.text}`
       this.updateDom()
     }
   },
-*/ 
   /**
    * Render the page we're on.
    */
   getDom() {
-    const wrapper = document.createElement("div")
-    wrapper.innerHTML = `<b>Random Fact</b><br/>${this.templateContent}`
+    const wrapper = document.createElement("div");
+    wrapper.innerHTML = `<b>Random Fact</b><br />${this.templateContent}`;
 
     return wrapper
   },
 
-  addRandomText() {
-    this.sendSocketNotification("GET_RANDOM_TEXT")
+  addRandomFact() {
+    this.sendSocketNotification("GET_RANDOM_FACT")
   },
 
   /**
