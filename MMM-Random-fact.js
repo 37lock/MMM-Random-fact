@@ -40,7 +40,7 @@ Module.register("MMM-Random-fact", {
    */
   getDom() {
     const wrapper = document.createElement("div");
-    wrapper.innerHTML = `<p class=gray-title>Random Fact</p><br />${this.templateContent}`;
+    wrapper.innerHTML = `<span class=gray-title>Random Fact</span><br />${this.templateContent}`;
 
     return wrapper
   },
