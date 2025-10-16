@@ -39,7 +39,7 @@ Module.register("MMM-Random-fact", {
    */
   getDom() {
     const wrapper = document.createElement("div");
-    wrapper.innerHTML = `<b>Random Fact</b><br />${this.templateContent}`;
+    wrapper.innerHTML = `Random Fact<br />${this.templateContent}`;
 
     return wrapper
   },
@@ -47,7 +47,7 @@ Module.register("MMM-Random-fact", {
   addRandomFact() {
     this.sendSocketNotification("GET_RANDOM_FACT")
   },
-
+  addRandomFact();
   /**
    * This is the place to receive notifications from other modules or the system.
    *
