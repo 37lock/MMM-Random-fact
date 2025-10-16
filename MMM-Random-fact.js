@@ -16,7 +16,7 @@ Module.register("MMM-Random-fact", {
 
   start() {
     this.templateContent = this.config.exampleContent;
-    this.addRandomFact(),
+    this.addRandomFact();
     // set timeout for next random text
     setInterval(() => this.addRandomFact(), 900000)
     
